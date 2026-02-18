@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Research · Brojogopal Sapui</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Brojogopal Sapui</a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a class="active" href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1>Research</h1>
+    <p class="lead">
+      I focus on cross-layer physical security for AI hardware—linking device/circuit behavior to microarchitecture
+      and algorithm-level leakage and robustness.
+    </p>
+
+    <section class="card">
+      <h2 class="card-title">Core Areas</h2>
+      <ul class="bullets">
+        <li><b>Side-channel analysis (SCA):</b> power/EM/timing leakage in AI accelerators and similarity-search engines.</li>
+        <li><b>Fault injection (FI):</b> voltage/clock/glitch-based perturbations to induce misclassification or reveal secrets.</li>
+        <li><b>Secure AI accelerators:</b> architecture-aware defenses (masking, randomization, robust design flows).</li>
+        <li><b>Emerging devices & co-design:</b> security-aware characterization using device knobs such as back-bias / rFET behavior.</li>
+      </ul>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2 class="card-title">Representative Questions</h2>
+        <ul class="bullets">
+          <li>What leaks during similarity computations (e.g., Hamming distance, popcount, MAC)?</li>
+          <li>Which time-windows are most fault-sensitive, and why?</li>
+          <li>How to design measurable, silicon-validated countermeasures?</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="card-title">Methods & Tooling</h2>
+        <ul class="bullets">
+          <li>FPGA prototyping (triggered trace capture, profiling/attacks)</li>
+          <li>ChipWhisperer fault injection workflows</li>
+          <li>Device/circuit simulation & PVT/corner analysis</li>
+          <li>Security evaluation with reproducible scripts</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Brojogopal Sapui</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

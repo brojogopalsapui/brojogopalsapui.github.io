@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CV · Brojogopal Sapui</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Brojogopal Sapui</a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a class="active" href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1>Curriculum Vitae</h1>
+    <p class="lead">Add your PDF and link it here.</p>
+
+    <section class="card">
+      <h2 class="card-title">Download</h2>
+      <p>
+        Put your CV PDF file at:
+        <code>assets/BrojogopalSapui_CV.pdf</code>
+      </p>
+      <p>
+        Then link it:
+        <a class="btn" href="assets/BrojogopalSapui_CV.pdf">Download CV</a>
+      </p>
+      <p class="small muted">If you don’t have the PDF ready, upload later and this will start working automatically.</p>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Brojogopal Sapui</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

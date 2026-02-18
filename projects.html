@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects · Brojogopal Sapui</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Brojogopal Sapui</a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1>Projects</h1>
+    <p class="lead">A few representative efforts (you can link GitHub repos, videos, or PDFs).</p>
+
+    <section class="grid">
+      <article class="card">
+        <h2 class="card-title">HDC Accelerator Security</h2>
+        <p>Profiling + SCA/FI targeting similarity search (Hamming distance/popcount), triggers, and misclassification studies.</p>
+        <p class="small muted">Keywords: FPGA, trace capture, leakage assessment, countermeasures.</p>
+      </article>
+
+      <article class="card">
+        <h2 class="card-title">ChipWhisperer Fault Injection</h2>
+        <p>Voltage glitching workflows to identify sensitive timing windows and evaluate robustness of accelerator designs.</p>
+        <p class="small muted">Keywords: glitching, timing windows, attack success metrics.</p>
+      </article>
+
+      <article class="card">
+        <h2 class="card-title">Security-Aware Test Structures</h2>
+        <p>Test-chip-oriented thinking: measure, model, and mitigate physical leakage at device/circuit/architecture level.</p>
+        <p class="small muted">Keywords: silicon validation, co-design, characterization.</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Brojogopal Sapui</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
