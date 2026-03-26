@@ -2795,3 +2795,709 @@ body.portal-page .footer-grid a.trending-link:hover{
   color:#ffffff!important;
   background:linear-gradient(135deg, rgba(104,151,255,.34), rgba(90,234,247,.23), rgba(255,106,183,.24))!important;
 }
+
+/* =========================================================
+   MOBILE CLEANUP LAYER
+   Keep existing desktop view unchanged
+   Paste at the VERY END of the stylesheet
+   ========================================================= */
+
+/* safer overflow handling */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* generic media safety */
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------------------------------------------------------
+   TABLET + MOBILE
+   --------------------------------------------------------- */
+@media (max-width: 919px) {
+  .container {
+    width: min(100% - 1rem, 1240px) !important;
+    margin-inline: auto !important;
+  }
+
+  /* header / top line */
+  .portal-topline {
+    padding-top: 0.45rem !important;
+  }
+
+  .portal-topline__inner {
+    padding: 0.8rem 0.9rem !important;
+    border-radius: 18px !important;
+    gap: 0.6rem !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+
+  .portal-topline__text {
+    font-size: 0.9rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .portal-topline__link {
+    width: 100% !important;
+    text-align: center !important;
+    padding-top: 0.1rem !important;
+  }
+
+  /* sticky header */
+  .site-shell-header,
+  .site-header {
+    backdrop-filter: blur(14px) saturate(125%) !important;
+  }
+
+  .shell-header__inner,
+  .nav-wrap {
+    min-height: 66px !important;
+    gap: 0.7rem !important;
+  }
+
+  .shell-brand__copy strong {
+    font-size: 0.92rem !important;
+  }
+
+  .shell-brand__copy small {
+    font-size: 0.68rem !important;
+  }
+
+  /* mobile menu */
+  .shell-nav {
+    right: 0.5rem !important;
+    left: 0.5rem !important;
+    width: auto !important;
+    border-radius: 20px !important;
+    padding: 0.7rem !important;
+    gap: 0.4rem !important;
+  }
+
+  .shell-nav a {
+    padding: 0.85rem 0.95rem !important;
+    font-size: 0.95rem !important;
+    border-radius: 14px !important;
+  }
+
+  .nav {
+    right: 0.5rem !important;
+    left: 0.5rem !important;
+    width: auto !important;
+    border-radius: 20px !important;
+    padding: 0.7rem !important;
+    gap: 0.45rem !important;
+  }
+
+  .nav a {
+    width: 100% !important;
+    padding: 0.88rem 0.95rem !important;
+    font-size: 0.95rem !important;
+    border-radius: 14px !important;
+  }
+
+  /* hero */
+  body.portal-page .hero,
+  body.portal-page .page-hero,
+  .hero,
+  .page-hero {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  body.portal-page .hero .container,
+  body.portal-page .page-hero .container {
+    padding: 1rem 0.9rem 0.95rem !important;
+    border-radius: 24px !important;
+  }
+
+  .hero-grid,
+  .page-grid,
+  .two-col,
+  .split,
+  .watch-columns,
+  .footer-grid,
+  .card-grid.three,
+  .card-grid.four,
+  .post-list,
+  .resource-grid,
+  .diagram-grid,
+  .journey-grid,
+  .direct-domain-grid,
+  .expertise-grid,
+  .snapshot-grid,
+  .stat-grid,
+  .metric-grid,
+  .quick-grid,
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  body.portal-page h1 {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+    line-height: 1.06 !important;
+    letter-spacing: -0.04em !important;
+    margin: 0.7rem 0 0.9rem !important;
+  }
+
+  body.portal-page h2 {
+    font-size: clamp(1.45rem, 6.2vw, 2.1rem) !important;
+    line-height: 1.14 !important;
+    margin: 0.15rem 0 0.75rem !important;
+  }
+
+  body.portal-page h3 {
+    font-size: clamp(1.02rem, 4.7vw, 1.3rem) !important;
+    line-height: 1.28 !important;
+  }
+
+  body.portal-page .lead,
+  body.portal-page p,
+  body.portal-page li,
+  .lead,
+  p,
+  li {
+    font-size: 0.98rem !important;
+    line-height: 1.72 !important;
+  }
+
+  .hero-copy,
+  .hero-copy h1 {
+    max-width: 100% !important;
+  }
+
+  .hero-search {
+    margin-top: 1rem !important;
+    padding: 0.9rem !important;
+    border-radius: 20px !important;
+  }
+
+  .hero-search-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem !important;
+  }
+
+  .search-fake {
+    min-height: 50px !important;
+    padding: 0 0.9rem !important;
+    border-radius: 16px !important;
+  }
+
+  .hero-chips {
+    gap: 0.55rem !important;
+  }
+
+  .hero-chips span,
+  .hero-mini-points span,
+  .mini-stat,
+  .snapshot-chip {
+    min-height: 38px !important;
+    padding: 0.68rem 0.9rem !important;
+    font-size: 0.88rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* sections */
+  body.portal-page .section,
+  .section {
+    padding: 1rem 0 1.25rem !important;
+  }
+
+  body.portal-page .section-head,
+  .section-head {
+    margin-bottom: 0.9rem !important;
+  }
+
+  .section-head h2::after,
+  .page-hero h1::after,
+  .hero h1::after {
+    width: 64px !important;
+    margin-top: 0.55rem !important;
+  }
+
+  /* pills / eyebrows */
+  body.portal-page .eyebrow,
+  body.portal-page .mini-kicker,
+  body.portal-page .tag,
+  body.portal-page .kicker,
+  body.portal-page .pulse-label,
+  .eyebrow,
+  .kicker,
+  .tag,
+  .watch-badge,
+  .watch-tag,
+  .resource-pill,
+  .accordion-kicker,
+  .accordion-meta,
+  .meta-chip {
+    font-size: 0.72rem !important;
+    min-height: 32px !important;
+    padding: 0 0.72rem !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  /* buttons */
+  .hero-actions,
+  .btn-row,
+  .cta-actions,
+  .section-actions,
+  .pill-row,
+  .meta-chip-row,
+  .anchor-links,
+  .watch-inline-links,
+  .resource-pill-row {
+    gap: 0.55rem !important;
+  }
+
+  body.portal-page .hero-actions .btn,
+  body.portal-page .cta-actions .btn,
+  body.portal-page .btn-row .btn,
+  .hero-actions .btn,
+  .cta-actions .btn,
+  .btn-row .btn {
+    flex: 1 1 auto !important;
+    min-height: 46px !important;
+    padding: 0.82rem 1rem !important;
+    font-size: 0.94rem !important;
+  }
+
+  /* cards */
+  body.portal-page .content-card,
+  body.portal-page .panel,
+  body.portal-page .post-card,
+  body.portal-page .quick-card,
+  body.portal-page .feature-card,
+  body.portal-page .topic-card,
+  body.portal-page .foundation-card,
+  body.portal-page .section-card,
+  body.portal-page .info-card,
+  body.portal-page .watch-card,
+  body.portal-page .profile-card,
+  body.portal-page .faq-card,
+  body.portal-page .toc,
+  body.portal-page .cta,
+  body.portal-page .portal-visual,
+  body.portal-page .pulse-card,
+  body.portal-page .metric-card,
+  body.portal-page .resource-card,
+  body.portal-page .watch-note,
+  body.portal-page .accordion,
+  .content-card,
+  .post-card,
+  .topic-card,
+  .section-card,
+  .cta,
+  .resource-card,
+  .watch-note,
+  .watch-block,
+  .resource-mini,
+  .toc,
+  .page-figure,
+  .lifecycle-fig,
+  .landscape-card,
+  .compact-figure,
+  .accordion,
+  .foundational-figure,
+  .stat-card {
+    border-radius: 22px !important;
+  }
+
+  body.portal-page .content-card,
+  body.portal-page .panel,
+  body.portal-page .topic-card,
+  body.portal-page .foundation-card,
+  body.portal-page .section-card,
+  body.portal-page .watch-card,
+  body.portal-page .pulse-card,
+  body.portal-page .quick-card,
+  body.portal-page .feature-card,
+  body.portal-page .resource-card,
+  body.portal-page .watch-note,
+  body.portal-page .accordion,
+  .content-card,
+  .watch-note,
+  .resource-card,
+  .cta,
+  .stat-card {
+    padding: 0.95rem !important;
+  }
+
+  .topic-card,
+  .section-card,
+  .resource-mini,
+  .watch-block {
+    padding: 1rem !important;
+  }
+
+  /* medium mobile/tablet: allow swipe cards but less oversized */
+  body.portal-page .post-card,
+  body.portal-page .feature-card,
+  body.portal-page .quick-card,
+  body.portal-page .topic-card,
+  body.portal-page .foundation-card,
+  body.portal-page .section-card,
+  body.portal-page .pulse-card {
+    min-width: 88% !important;
+  }
+
+  /* images */
+  body.portal-page .portal-media,
+  body.portal-page .feature-media,
+  body.portal-page .img-container,
+  body.portal-page .visual-panel,
+  body.portal-page .compact-figure,
+  body.portal-page .page-figure .img-frame,
+  body.portal-page .img-frame,
+  .img-container,
+  .img-frame,
+  .page-figure,
+  .foundational-figure {
+    border-radius: 20px !important;
+  }
+
+  body.portal-page .portal-media img,
+  body.portal-page .feature-media img,
+  body.portal-page .visual-panel img,
+  body.portal-page .zoomable-thumb,
+  body.portal-page .zoom-img,
+  body.portal-page .hero-figure-img,
+  .portal-media img,
+  .feature-media img,
+  .visual-panel img,
+  .zoomable-thumb,
+  .zoom-img {
+    aspect-ratio: 16 / 11 !important;
+    object-fit: contain !important;
+  }
+
+  body.portal-page .hero .portal-media {
+    padding: 0.95rem 0.95rem 0.55rem !important;
+  }
+
+  body.portal-page[data-page="home"] .section .visual-panel > img {
+    padding: 0.85rem !important;
+  }
+
+  .img-expand-btn,
+  .figure-expand-btn {
+    width: 38px !important;
+    height: 38px !important;
+    top: 0.65rem !important;
+    right: 0.65rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* accordion */
+  body.portal-page .accordion-trigger,
+  .accordion-trigger {
+    padding: 0.95rem 0.95rem 0.9rem !important;
+    gap: 0.55rem !important;
+  }
+
+  body.portal-page .accordion-title,
+  .accordion-title {
+    font-size: 1.02rem !important;
+    line-height: 1.28 !important;
+    max-width: calc(100% - 3rem) !important;
+  }
+
+  body.portal-page .accordion-preview,
+  .accordion-preview {
+    font-size: 0.95rem !important;
+    line-height: 1.68 !important;
+  }
+
+  body.portal-page .accordion-panel-inner,
+  .accordion-panel-inner {
+    padding: 0 0.95rem 0.95rem !important;
+  }
+
+  body.portal-page .accordion-icon,
+  .accordion-icon {
+    right: 0.95rem !important;
+    top: 0.95rem !important;
+  }
+
+  /* tables */
+  .table-wrap {
+    border-radius: 16px !important;
+  }
+
+  .resource-table {
+    min-width: 620px !important;
+  }
+
+  .resource-table th,
+  .resource-table td {
+    padding: 0.8rem !important;
+    font-size: 0.94rem !important;
+  }
+
+  /* toc */
+  body.portal-page .toc,
+  .toc {
+    position: relative !important;
+    top: 0 !important;
+  }
+
+  body.portal-page .toc a,
+  .toc a {
+    padding: 0.78rem 0.85rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* footer */
+  .footer-grid,
+  .shell-footer__grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
+  }
+
+  .shell-footer__card,
+  .site-footer .content-card {
+    padding: 0.95rem !important;
+    border-radius: 20px !important;
+  }
+
+  /* floating note */
+  .floating-notif {
+    position: static !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: calc(100% - 1rem) !important;
+    margin: 0.75rem auto 0 !important;
+    padding: 0.75rem 0.85rem !important;
+    border-radius: 18px !important;
+    animation: none !important;
+  }
+
+  .notif-text {
+    font-size: 0.92rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .notif-badge {
+    font-size: 0.7rem !important;
+    padding: 0.32rem 0.54rem !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   SMALL PHONES
+   --------------------------------------------------------- */
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 0.8rem, 1240px) !important;
+  }
+
+  body.portal-page .hero .container,
+  body.portal-page .page-hero .container {
+    padding: 0.9rem 0.82rem 0.85rem !important;
+    border-radius: 20px !important;
+  }
+
+  body.portal-page h1 {
+    font-size: clamp(1.8rem, 8.4vw, 2.55rem) !important;
+    line-height: 1.07 !important;
+  }
+
+  body.portal-page h2 {
+    font-size: clamp(1.28rem, 6.4vw, 1.75rem) !important;
+    line-height: 1.16 !important;
+  }
+
+  body.portal-page h3 {
+    font-size: clamp(1rem, 4.9vw, 1.18rem) !important;
+  }
+
+  body.portal-page .lead,
+  body.portal-page p,
+  body.portal-page li {
+    font-size: 0.95rem !important;
+    line-height: 1.68 !important;
+  }
+
+  body.portal-page .eyebrow,
+  body.portal-page .mini-kicker,
+  body.portal-page .tag,
+  body.portal-page .kicker,
+  body.portal-page .pulse-label,
+  .eyebrow,
+  .kicker,
+  .tag,
+  .watch-badge,
+  .watch-tag,
+  .resource-pill,
+  .accordion-kicker,
+  .accordion-meta,
+  .meta-chip {
+    font-size: 0.69rem !important;
+    min-height: 30px !important;
+    padding: 0 0.66rem !important;
+  }
+
+  .brand,
+  .shell-brand__mark {
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    border-radius: 14px !important;
+  }
+
+  .brand-hint,
+  .shell-brand__copy small {
+    display: none !important;
+  }
+
+  .menu-btn,
+  .shell-menu-btn {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 14px !important;
+  }
+
+  /* very small screens: stack cards instead of horizontal slider */
+  body.portal-page .quick-grid,
+  body.portal-page .grid-3,
+  body.portal-page .watch-grid,
+  body.portal-page .topic-grid,
+  body.portal-page .foundation-grid,
+  body.portal-page .pulse-grid,
+  body.portal-page .card-grid,
+  body.portal-page .grid-2,
+  body.portal-page .faq-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.portal-page .post-card,
+  body.portal-page .feature-card,
+  body.portal-page .quick-card,
+  body.portal-page .topic-card,
+  body.portal-page .foundation-card,
+  body.portal-page .section-card,
+  body.portal-page .pulse-card {
+    min-width: 0 !important;
+  }
+
+  .hero-actions,
+  .btn-row,
+  .cta-actions,
+  .pill-row,
+  .meta-chip-row,
+  .anchor-links,
+  .watch-inline-links,
+  .resource-pill-row,
+  .hero-chips {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .hero-actions .btn,
+  .btn-row .btn,
+  .cta-actions .btn {
+    width: 100% !important;
+  }
+
+  .hero-mini-points span,
+  .mini-stat,
+  .snapshot-chip,
+  .hero-chips span {
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .metric-grid,
+  .snapshot-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.portal-page .content-card,
+  body.portal-page .panel,
+  body.portal-page .topic-card,
+  body.portal-page .foundation-card,
+  body.portal-page .section-card,
+  body.portal-page .watch-card,
+  body.portal-page .pulse-card,
+  body.portal-page .quick-card,
+  body.portal-page .feature-card,
+  body.portal-page .resource-card,
+  body.portal-page .watch-note,
+  body.portal-page .accordion,
+  .content-card,
+  .watch-note,
+  .resource-card,
+  .cta,
+  .stat-card {
+    padding: 0.88rem !important;
+    border-radius: 18px !important;
+  }
+
+  .img-expand-btn,
+  .figure-expand-btn {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 11px !important;
+  }
+
+  .floating-notif {
+    width: calc(100% - 0.8rem) !important;
+    margin-top: 0.6rem !important;
+  }
+
+  .notif-text {
+    font-size: 0.89rem !important;
+  }
+
+  .portal-chip-rail {
+    padding-left: 0.45rem !important;
+    padding-right: 0.45rem !important;
+  }
+
+  .portal-chip-rail a {
+    min-height: 36px !important;
+    padding: 0 0.82rem !important;
+    font-size: 0.88rem !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   EXTRA SMALL PHONES
+   --------------------------------------------------------- */
+@media (max-width: 420px) {
+  body.portal-page h1 {
+    font-size: 1.65rem !important;
+  }
+
+  body.portal-page h2 {
+    font-size: 1.18rem !important;
+  }
+
+  body.portal-page .lead,
+  body.portal-page p,
+  body.portal-page li {
+    font-size: 0.93rem !important;
+  }
+
+  .shell-nav a,
+  .nav a {
+    padding: 0.78rem 0.85rem !important;
+    font-size: 0.92rem !important;
+  }
+
+  .resource-table {
+    min-width: 560px !important;
+  }
+}
