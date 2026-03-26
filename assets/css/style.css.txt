@@ -2553,17 +2553,8 @@ body.portal-page[data-page="home"] .hero .container::after{background:radial-gra
 }
 .portal-media{padding:1.1rem 1.1rem 0}
 .portal-media img{border-radius:24px;border:1px solid rgba(225,235,248,.12);width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;background:#ffffff}
-.portal-copy{
-  padding:1rem 1.2rem 1.3rem;
-  background:linear-gradient(180deg, rgba(23,35,56,.18), rgba(16,26,42,.34));
-}
-.portal-copy p{
-  margin:.45rem 0 0;
-  color:#edf6ff;
-  line-height:1.72;
-}
-.portal-copy h3,
-.visual-copy h3{color:#ffffff}
+.portal-copy{padding:1rem 1.2rem 1.3rem}
+.portal-copy p{margin:.45rem 0 0;color:var(--muted)}
 .metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin-top:1rem}
 .metric-card{
   background:rgba(255,255,255,.05);
@@ -2604,21 +2595,8 @@ body.portal-page[data-page="home"] .hero .container::after{background:radial-gra
 .mini-link span{color:var(--muted)}
 .visual-panel{overflow:hidden;padding:0}
 .visual-panel img{width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid rgba(225,235,248,.12);cursor:zoom-in;background:#ffffff}
-.visual-copy{
-  padding:1.2rem 1.25rem 1.35rem;
-  background:linear-gradient(180deg, rgba(23,35,56,.16), rgba(16,26,42,.30));
-}
-.visual-copy p{
-  color:#edf6ff;
-  line-height:1.72;
-}
-.visual-copy .mini-kicker,
-.portal-copy .mini-kicker{
-  background:rgba(83,229,246,.18)!important;
-  border-color:rgba(83,229,246,.34)!important;
-  color:#f2feff!important;
-  box-shadow:0 0 0 1px rgba(255,255,255,.04) inset;
-}
+.visual-copy{padding:1.2rem 1.25rem 1.35rem}
+.visual-copy p{color:var(--muted)}
 .profile-mark{
   width:62px;height:62px;border-radius:22px;background:linear-gradient(135deg,#86bdff,#7c87ff 58%,#56d7ca 100%);color:#08111f;
   display:grid;place-items:center;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:1.15rem;font-weight:800;flex-shrink:0;
@@ -2652,19 +2630,6 @@ body.portal-page .portal-topline__link,
 body.portal-page .portal-figure-link{color:#eaf4ff!important}
 body.portal-page .portal-topline__link:hover,
 body.portal-page .portal-figure-link:hover{color:#ffffff!important}
-
-body.portal-page .hero .portal-copy p,
-body.portal-page .visual-panel .visual-copy p{
-  color:#edf6ff!important;
-}
-body.portal-page .hero .portal-copy,
-body.portal-page .visual-panel .visual-copy{
-  background:linear-gradient(180deg, rgba(23,35,56,.18), rgba(16,26,42,.34))!important;
-}
-body.portal-page .hero .portal-copy .mini-kicker,
-body.portal-page .visual-panel .visual-copy .mini-kicker{
-  color:#f2feff!important;
-}
 
 @media (max-width:1100px){
   .hero-grid,.two-col,.quick-grid,.grid-3{grid-template-columns:1fr}
