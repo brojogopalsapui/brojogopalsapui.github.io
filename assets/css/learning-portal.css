@@ -613,3 +613,38 @@ details .answer{margin-top:.8rem}
 @media (max-width:860px){
   .pulse-grid{grid-template-columns:1fr}
 }
+
+/* =====================================================================
+   VISIBILITY FIX PASS — keep home theme, improve image-caption contrast
+   ===================================================================== */
+.visual-panel{
+  background:linear-gradient(180deg,#ffffff,#f9fbff);
+}
+.visual-copy{
+  background:linear-gradient(180deg,#ffffff,#f9fbff);
+}
+.visual-copy h3{
+  color:#17324a;
+}
+.visual-copy p{
+  color:#43586d;
+  font-weight:600;
+}
+.visual-panel .mini-kicker{
+  background:#eef8fb;
+  color:#0c6670;
+  border-color:rgba(15,138,143,.16);
+}
+
+/* make text under feature/visual cards a bit stronger without changing palette */
+.feature-body p,
+.portal-copy p,
+.quick-card p,
+.info-card p,
+.watch-card p,
+.panel p,
+.topic-card p,
+.foundation-card p,
+.note{
+  color:#4d6276;
+}

@@ -2614,3 +2614,123 @@ a.trending-link:hover,
     grid-template-columns: 1fr;
   }
 }
+
+/* =====================================================================
+   VISIBILITY FIX PASS — stronger contrast on white cards + restore
+   top/bottom Trending Topics pill visibility across all non-home pages
+   ===================================================================== */
+
+/* body copy on white cards was still too faded in a few places */
+p, li,
+.topic-card p,
+.section-card p,
+.content-card p,
+.resource-card p,
+.watch-note p,
+.watch-block p,
+.resource-mini p,
+.cta p,
+.card-caption p,
+.page-figure figcaption,
+.callout,
+.contact-list p,
+.resource-note,
+.watch-bottom-note,
+.accordion-preview,
+.resource-list li,
+.figure-caption,
+.profile-compact p,
+.hero .lead,
+.page-hero .lead,
+.watch-lead,
+.notif-text,
+.watch-progress-text,
+.accordion-panel p,
+.accordion-panel li,
+.snapshot-box p,
+.toc p,
+.footer-grid p,
+.footer-grid li,
+.site-footer p {
+  color:#45586b !important;
+}
+
+/* slightly stronger labels and helper text inside white containers */
+.resource-note,
+.watch-bottom-note,
+.callout,
+.snapshot-box,
+.toc,
+.mini-card {
+  background:#fcfdff !important;
+}
+
+/* keep the glossy Trending Topics button readable everywhere */
+a.trending-link,
+.nav a.trending-link,
+.notif-text a.trending-link,
+.footer-grid a.trending-link,
+.site-footer a.trending-link {
+  color:#0b1320 !important;
+  background:linear-gradient(135deg,#ffe18f 0%,#f4c36d 42%,#fff2bc 100%) !important;
+  border:1px solid rgba(244,195,109,.62) !important;
+  box-shadow:
+    0 0 0 rgba(255,217,120,0),
+    0 10px 24px rgba(244,195,109,.30),
+    inset 0 1px 0 rgba(255,255,255,.9) !important;
+  text-shadow:none !important;
+}
+
+a.trending-link:hover,
+.nav a.trending-link:hover,
+.notif-text a.trending-link:hover,
+.footer-grid a.trending-link:hover,
+.site-footer a.trending-link:hover,
+.nav a.trending-link.active,
+.nav a.active.trending-link {
+  color:#08111d !important;
+  background:linear-gradient(135deg,#ffe69d 0%,#f4c36d 42%,#fff5ca 100%) !important;
+  border-color:rgba(244,195,109,.72) !important;
+  box-shadow:
+    0 0 22px rgba(255,217,120,.42),
+    0 14px 30px rgba(244,195,109,.34),
+    inset 0 1px 0 rgba(255,255,255,.95) !important;
+}
+
+/* ensure active nav treatment does not wash out the blinking pill */
+.nav a.active.trending-link,
+.nav a.trending-link.active {
+  transform:none;
+}
+
+/* stronger footer/nav/body link readability on light surfaces */
+.footer-grid a,
+.site-footer a,
+.toc a,
+.watch-inline-links a,
+.resource-card a,
+.resource-mini a,
+.post-card a,
+.topic-card a,
+.section-card a {
+  color:#1c4fc4 !important;
+}
+
+.footer-grid a:hover,
+.site-footer a:hover,
+.toc a:hover,
+.watch-inline-links a:hover,
+.resource-card a:hover,
+.resource-mini a:hover,
+.post-card a:hover,
+.topic-card a:hover,
+.section-card a:hover {
+  color:#143b96 !important;
+}
+
+/* keep top note / badges readable when placed on white surfaces */
+.notif-badge,
+.floating-research-alert .alert-badge,
+.research-alert-badge {
+  color:#ffffff !important;
+}
