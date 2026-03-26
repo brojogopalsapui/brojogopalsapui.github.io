@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -11,23 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../assets/css/style.css" rel="stylesheet"/>
 </head>
-<body>
-<header class="site-header">
-<div class="container nav-wrap">
-<a aria-label="Brojogopal Sapui Home" class="brand" href="../index.html">B<span>S</span></a>
-<nav class="nav" id="siteNav">
-<a href="../index.html">Home</a>
-<a href="../about.html">About</a>
-<a href="../research.html">Research</a>
-<a class="trending-link" href="../ongoing-work.html">Trending Topics</a>
-<a href="../publications.html">Resources</a>
-<a href="../contact.html">Contact</a>
-</nav>
-<button aria-controls="siteNav" aria-expanded="false" aria-label="Toggle menu" class="menu-btn" id="menuBtn">
-<span></span><span></span><span></span>
-</button>
-</div>
-</header>
+<body class="subpage shell-enabled" data-nav="research" data-shell-theme="dark" data-site-root="../">
+
 <main>
 <section class="hero" style="padding: 4.5rem 0 3rem;">
 <div class="container">
@@ -96,24 +82,7 @@
 </div>
 </section>
 </main>
-<footer class="site-footer">
-<div class="container footer-grid">
-<div>
-<h3>Brojogopal Sapui</h3>
-<p>AI Security Research • Hardware Trust • Edge and Physical AI</p>
-</div>
-<div>
-<h4>Main Pages</h4>
-<a href="../research.html">Research</a>
-<a class="trending-link" href="../ongoing-work.html">Trending Topics</a>
-<a href="../publications.html">Resources</a>
-</div>
-<div>
-<h4>Focus</h4>
-<p>Cross-layer AI security, trustworthy deployment, hardware-aware defense, and physical intelligence.</p>
-</div>
-</div>
-</footer>
-<script src="../assets/js/main.js"></script>
+
+<script src="../assets/js/site-shell.js"></script><script src="../assets/js/main.js"></script>
 </body>
 </html>
