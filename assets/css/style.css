@@ -2674,3 +2674,124 @@ body.portal-page .visual-panel .visual-copy .mini-kicker{
   .hero-copy h1{max-width:none}
   .metric-grid,.quick-grid,.grid-3{grid-template-columns:1fr}
 }
+
+/* === Home figure visibility redesign + trending contrast fix === */
+body.portal-page[data-page="home"] .hero .portal-visual,
+body.portal-page[data-page="home"] .section .visual-panel{
+  overflow:hidden;
+  background:linear-gradient(180deg, rgba(17,31,52,.98), rgba(8,16,30,.99))!important;
+  border:1px solid rgba(151,190,255,.18)!important;
+  box-shadow:0 24px 52px rgba(0,0,0,.28)!important;
+}
+
+body.portal-page[data-page="home"] .hero .portal-media,
+body.portal-page[data-page="home"] .section .visual-panel > img{
+  background:linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%)!important;
+}
+
+body.portal-page[data-page="home"] .hero .portal-media{
+  padding:1.15rem 1.15rem .7rem!important;
+}
+
+body.portal-page[data-page="home"] .section .visual-panel > img{
+  display:block;
+  width:100%;
+  padding:1rem!important;
+  aspect-ratio:16/10;
+  object-fit:contain!important;
+  border-bottom:1px solid rgba(151,190,255,.16)!important;
+}
+
+body.portal-page[data-page="home"] .portal-figure-actions{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  padding:0 1.2rem .15rem;
+  background:linear-gradient(180deg, rgba(12,22,38,.06), rgba(12,22,38,0));
+}
+
+body.portal-page[data-page="home"] .portal-figure-link{
+  display:inline-flex!important;
+  align-items:center;
+  gap:.45rem;
+  padding:.72rem 1rem!important;
+  border-radius:16px!important;
+  background:linear-gradient(135deg, #8cc4ff 0%, #69ddf0 100%)!important;
+  border:0!important;
+  color:#07111f!important;
+  font-weight:800!important;
+  letter-spacing:.01em;
+  box-shadow:0 12px 26px rgba(83,229,246,.22)!important;
+}
+
+body.portal-page[data-page="home"] .portal-figure-link:hover{
+  color:#07111f!important;
+  transform:translateY(-2px);
+  box-shadow:0 16px 30px rgba(83,229,246,.28)!important;
+}
+
+body.portal-page[data-page="home"] .portal-copy,
+body.portal-page[data-page="home"] .visual-panel .visual-copy{
+  background:linear-gradient(180deg, #12243c 0%, #0a1628 100%)!important;
+  padding:1.18rem 1.25rem 1.28rem!important;
+}
+
+body.portal-page[data-page="home"] .portal-copy .mini-kicker,
+body.portal-page[data-page="home"] .visual-panel .visual-copy .mini-kicker{
+  display:inline-flex;
+  align-items:center;
+  padding:.38rem .7rem;
+  border-radius:999px;
+  background:rgba(140,196,255,.18)!important;
+  border:1px solid rgba(140,196,255,.3)!important;
+  color:#f6fbff!important;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+body.portal-page[data-page="home"] .portal-copy h3,
+body.portal-page[data-page="home"] .visual-panel .visual-copy h3{
+  margin:.68rem 0 .38rem;
+  color:#ffffff!important;
+  font-size:1.3rem;
+  line-height:1.25;
+}
+
+body.portal-page[data-page="home"] .portal-copy p,
+body.portal-page[data-page="home"] .visual-panel .visual-copy p{
+  margin:.2rem 0 0;
+  color:#f3f8ff!important;
+  line-height:1.76;
+}
+
+body.portal-page[data-page="home"] .hero .metric-card{
+  background:rgba(255,255,255,.08)!important;
+  border:1px solid rgba(151,190,255,.18)!important;
+}
+
+body.portal-page[data-page="home"] .hero .metric-card span{
+  color:#eef5ff!important;
+}
+
+body.portal-page a.trending-link,
+body.portal-page .nav a.trending-link,
+body.portal-page .footer-grid a.trending-link,
+body.portal-page .site-shell-header .shell-nav a.trending-link,
+body.portal-page .site-shell-header .shell-nav a.trending-link.active,
+body.portal-page .site-shell-header .shell-nav a.trending-link:hover{
+  color:#ffffff!important;
+}
+
+body.portal-page a.trending-link,
+body.portal-page .footer-grid a.trending-link{
+  background:linear-gradient(135deg, rgba(91,140,255,.28), rgba(83,229,246,.18), rgba(255,106,183,.2))!important;
+  border:1px solid rgba(151,190,255,.22)!important;
+  box-shadow:0 0 0 rgba(83,229,246,0), 0 12px 30px rgba(7,17,31,.28), inset 0 1px 0 rgba(255,255,255,.12)!important;
+}
+
+body.portal-page a.trending-link:hover,
+body.portal-page .footer-grid a.trending-link:hover{
+  color:#ffffff!important;
+  background:linear-gradient(135deg, rgba(104,151,255,.34), rgba(90,234,247,.23), rgba(255,106,183,.24))!important;
+}
