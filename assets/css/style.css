@@ -1567,7 +1567,7 @@ a{text-decoration:none}
   backdrop-filter: blur(18px) saturate(130%);
   background:rgba(6,14,28,.62);
   border-bottom:1px solid rgba(151,190,255,.09);
-  overflow:hidden;
+  overflow:visible;
 }
 .shell-header__inner{
   min-height:72px;
@@ -1575,6 +1575,7 @@ a{text-decoration:none}
   align-items:center;
   justify-content:space-between;
   gap:.9rem;
+  position: relative;
 }
 .portal-orb{
   position:absolute;
