@@ -21,10 +21,10 @@
     });
   }
 
-  function initLightbox(){
-    const targets = document.querySelectorAll('.zoom-img, .zoomable-thumb, .hero-figure-img, .feature-media img, .portal-media img');
-    if (!targets.length) return;
-    const overlay = document.createElement('div');
+  function createLightbox(){
+    let overlay = document.querySelector('.portal-lightbox');
+    if (overlay) return overlay;
+    overlay = document.createElement('div');
     overlay.className = 'portal-lightbox';
     overlay.innerHTML = `
       <div class="portal-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Expanded image view">
@@ -32,35 +32,95 @@
         <img class="portal-lightbox__img" src="" alt="" />
       </div>`;
     document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  function initLightbox(){
+    const targets = document.querySelectorAll('.img-expand-btn, .zoom-img, .zoomable-thumb, .hero-figure-img, .feature-media img, .portal-media img, .visual-panel img');
+    if (!targets.length) return;
+    const overlay = createLightbox();
     const img = overlay.querySelector('.portal-lightbox__img');
     const closeBtn = overlay.querySelector('.portal-lightbox__close');
+
     const close = () => {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
       img.src = '';
       img.alt = '';
     };
+
     const open = (src, alt='') => {
+      if (!src) return;
       img.src = src;
       img.alt = alt;
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
     };
+
     targets.forEach(target => {
       target.addEventListener('click', (e) => {
-        if (target.closest('a') && target.closest('a').getAttribute('href')?.endsWith('.html')) return;
         e.preventDefault();
         e.stopPropagation();
-        open(target.currentSrc || target.src, target.alt || 'Expanded image');
+        const src = target.matches('.img-expand-btn') ? target.getAttribute('data-full') : (target.currentSrc || target.src);
+        const alt = target.matches('.img-expand-btn') ? (target.getAttribute('data-alt') || 'Expanded image') : (target.alt || 'Expanded image');
+        open(src, alt);
       });
     });
+
     closeBtn.addEventListener('click', close);
     overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
+  }
+
+  function initAccordions(){
+    const accordions = document.querySelectorAll('.accordion');
+    if (!accordions.length) return;
+
+    const syncAccordion = (accordion, open) => {
+      const trigger = accordion.querySelector('.accordion-trigger');
+      const panel = accordion.querySelector('.accordion-panel');
+      if (!trigger || !panel) return;
+      accordion.classList.toggle('is-open', open);
+      trigger.setAttribute('aria-expanded', String(open));
+      panel.setAttribute('aria-hidden', String(!open));
+      panel.style.maxHeight = open ? `${panel.scrollHeight}px` : '0px';
+    };
+
+    accordions.forEach((accordion, index) => {
+      const trigger = accordion.querySelector('.accordion-trigger');
+      const panel = accordion.querySelector('.accordion-panel');
+      if (!trigger || !panel) return;
+      if (!panel.id) panel.id = `portal-accordion-panel-${index + 1}`;
+      trigger.setAttribute('aria-controls', panel.id);
+      syncAccordion(accordion, accordion.classList.contains('is-open'));
+      trigger.addEventListener('click', () => {
+        const willOpen = !accordion.classList.contains('is-open');
+        const group = accordion.getAttribute('data-accordion-group');
+        if (group && willOpen) {
+          document.querySelectorAll(`.accordion[data-accordion-group="${group}"]`).forEach(item => {
+            if (item !== accordion) syncAccordion(item, false);
+          });
+        }
+        syncAccordion(accordion, willOpen);
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      accordions.forEach(accordion => {
+        if (accordion.classList.contains('is-open')) {
+          const panel = accordion.querySelector('.accordion-panel');
+          if (panel) panel.style.maxHeight = `${panel.scrollHeight}px`;
+        }
+      });
+    });
   }
 
   function initReveal(){
-    const nodes = document.querySelectorAll('main > section, .content-card, .post-card, .topic-card, .section-card, .panel, .feature-card, .quick-card, .pulse-card, .profile-card');
+    const nodes = document.querySelectorAll('main > section, .content-card, .post-card, .topic-card, .section-card, .panel, .feature-card, .quick-card, .pulse-card, .profile-card, .resource-card, .watch-note');
+    if (!('IntersectionObserver' in window)) {
+      nodes.forEach(el => el.classList.add('portal-reveal', 'is-visible'));
+      return;
+    }
     nodes.forEach(el => el.classList.add('portal-reveal'));
     const io = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -88,9 +148,10 @@
 
   function initCollapsibleCards(){
     const cards = document.querySelectorAll('.content-card, .panel');
-    cards.forEach((card, index) => {
+    cards.forEach(card => {
       if (card.closest('.page-hero') || card.closest('.cta-band') || card.closest('.site-shell-footer') || card.classList.contains('portal-skip-collapse')) return;
-      const children = Array.from(card.children).filter(el => el.nodeType === 1 && !['BUTTON'].includes(el.tagName));
+      if (card.querySelector('.portal-toggle') || card.classList.contains('accordion')) return;
+      const children = Array.from(card.children).filter(el => el.nodeType === 1 && el.tagName !== 'BUTTON');
       const textLength = (card.textContent || '').trim().length;
       if (children.length < 4 || textLength < 850) return;
       const wrap = document.createElement('div');
@@ -114,7 +175,7 @@
 
   function initTilt(){
     if (window.matchMedia('(pointer: coarse)').matches) return;
-    const cards = document.querySelectorAll('.quick-card, .feature-card, .content-card, .panel, .post-card, .section-card, .topic-card, .foundation-card, .profile-card, .pulse-card');
+    const cards = document.querySelectorAll('.quick-card, .feature-card, .content-card, .panel, .post-card, .section-card, .topic-card, .foundation-card, .profile-card, .pulse-card, .resource-card, .watch-note');
     cards.forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
@@ -138,6 +199,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     initMenu();
     initLightbox();
+    initAccordions();
     initReveal();
     initJumpRail();
     initCollapsibleCards();
