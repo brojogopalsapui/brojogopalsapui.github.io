@@ -1953,11 +1953,13 @@ body.portal-page figure figcaption{color:var(--portal-text-dim)!important}
 
 body.portal-page .metric-card strong,
 body.portal-page .icon-badge,
-body.portal-page .pulse-link,
 body.portal-page .portal-figure-link,
 body.portal-page .toc a:hover,
 body.portal-page .view-all,
 body.portal-page .mini-link small{color:var(--portal-cyan)!important}
+body.portal-page .pulse-link{
+  color:#ffffff!important;
+}
 body.portal-page .icon-badge,
 body.portal-page .profile-mark{
   background:linear-gradient(135deg, rgba(91,140,255,.18), rgba(83,229,246,.18))!important;
