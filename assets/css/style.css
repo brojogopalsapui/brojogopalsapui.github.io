@@ -1701,16 +1701,6 @@ body.portal-page .pulse-label{
   background:rgba(91,140,255,.13)!important;border:1px solid rgba(91,140,255,.22)!important;color:#dce7ff!important;
   font-size:.74rem!important;font-weight:800!important;letter-spacing:.08em!important;text-transform:uppercase;
 }
-/* Trending page: remove pill boundary only from Academic / Industry / Ecosystem */
-body.portal-page .pulse-label{
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  min-height: auto !important;
-  display: inline !important;
-  color: #ffffff !important;
-}
 body.portal-page .mini-kicker{background:rgba(83,229,246,.12)!important;border-color:rgba(83,229,246,.2)!important;color:#d2fbff!important}
 body.portal-page .tag{background:rgba(255,200,109,.12)!important;border-color:rgba(255,200,109,.2)!important;color:#ffe3b2!important}
 
@@ -1963,28 +1953,11 @@ body.portal-page figure figcaption{color:var(--portal-text-dim)!important}
 
 body.portal-page .metric-card strong,
 body.portal-page .icon-badge,
+body.portal-page .pulse-link,
 body.portal-page .portal-figure-link,
 body.portal-page .toc a:hover,
 body.portal-page .view-all,
 body.portal-page .mini-link small{color:var(--portal-cyan)!important}
-/* Trending page: make Jump to stream clear and plain */
-body.portal-page .pulse-link{
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  color: #ffffff !important;
-  font-weight: 800 !important;
-  opacity: 1 !important;
-  filter: none !important;
-  text-shadow: none !important;
-}
-body.portal-page .pulse-link{
-  color:#ffffff!important;
-}
-
-
 body.portal-page .icon-badge,
 body.portal-page .profile-mark{
   background:linear-gradient(135deg, rgba(91,140,255,.18), rgba(83,229,246,.18))!important;
@@ -3542,36 +3515,4 @@ iframe {
   .resource-table {
     min-width: 560px !important;
   }
-}
-
-
-/* ===== FINAL minimal fix for Trending page only ===== */
-body.portal-page .pulse-label{
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  min-height: auto !important;
-  display: inline !important;
-  color: #ffffff !important;
-  box-shadow: none !important;
-  letter-spacing: normal !important;
-  text-transform: none !important;
-}
-
-body.portal-page .pulse-link{
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  min-height: auto !important;
-  display: inline !important;
-  color: #ffffff !important;
-  box-shadow: none !important;
-  font-weight: 800 !important;
-  opacity: 1 !important;
-  filter: none !important;
-  text-shadow: none !important;
-  letter-spacing: normal !important;
-  text-transform: none !important;
 }
