@@ -1837,6 +1837,20 @@ body.portal-page .btn-accent{
   color:var(--portal-text)!important;
   box-shadow:none!important;
 }
+
+/* minimal fix for Trending page jump text */
+body.portal-page .pulse-link{
+  background:transparent!important;
+  border:none!important;
+  box-shadow:none!important;
+  padding:0!important;
+  border-radius:0!important;
+  color:#ffffff!important;
+  font-weight:800!important;
+  display:inline-block;
+}
+
+
 body.portal-page .btn,
 body.portal-page .portal-figure-link,
 body.portal-page .pulse-link,
