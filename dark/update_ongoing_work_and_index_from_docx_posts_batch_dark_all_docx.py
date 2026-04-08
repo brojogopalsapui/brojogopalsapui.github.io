@@ -520,6 +520,9 @@ def update_ongoing_work_html(input_html_path, output_html_path, article_id, arti
     else:
         watch_stack.append(new_article)
 
+    for duplicate_board in soup.select("section.article-index-board"):
+        duplicate_board.decompose()
+
     final_html = doctype + "\n" + str(soup)
     output_html_path.write_text(final_html, encoding="utf-8")
     return output_html_path
@@ -576,9 +579,10 @@ def update_index_html(input_html_path, output_html_path, post_id, title, preview
                 link_node["href"] = f"ongoing-work.html#{post_id}"
                 link_node.string = "Read the research watch →"
             else:
-                # Some homepages do not contain any floating/latest-note block.
-                # Skip this step quietly so the notebook still works.
-                pass
+                raise ValueError(
+                    "Could not find a supported floating/latest-note block in dark/index.html "
+                    "(expected either .floating-notif .notif-text or .research-alert)."
+                )
 
     if update_slider:
         watch_track = soup.select_one("div#watchTrack")
@@ -607,6 +611,9 @@ def update_index_html(input_html_path, output_html_path, post_id, title, preview
             # Some homepages do not contain the watch slider.
             # Skip this step quietly so the notebook still works.
             pass
+
+    for duplicate_board in soup.select("section.article-index-board"):
+        duplicate_board.decompose()
 
     final_html = doctype + "\n" + str(soup)
     output_html_path.write_text(final_html, encoding="utf-8")

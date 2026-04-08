@@ -520,6 +520,9 @@ def update_ongoing_work_html(input_html_path, output_html_path, article_id, arti
     else:
         watch_stack.append(new_article)
 
+    for duplicate_board in soup.select("section.article-index-board"):
+        duplicate_board.decompose()
+
     final_html = doctype + "\n" + str(soup)
     output_html_path.write_text(final_html, encoding="utf-8")
     return output_html_path
@@ -607,6 +610,9 @@ def update_index_html(input_html_path, output_html_path, post_id, title, preview
             # Newer homepage versions may not include a watch slider. Skip this
             # step quietly so the notebook still works.
             pass
+
+    for duplicate_board in soup.select("section.article-index-board"):
+        duplicate_board.decompose()
 
     final_html = doctype + "\n" + str(soup)
     output_html_path.write_text(final_html, encoding="utf-8")
