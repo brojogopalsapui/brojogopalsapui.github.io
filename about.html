@@ -9,9 +9,26 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="assets/css/style.css" rel="stylesheet"/><script defer="True" src="assets/js/site-shell.js"></script><script defer="True" src="assets/js/portal.js"></script></head>
-<body class="subpage portal-page" data-depth="0" data-nav="about" data-page="about">
-<div id="site-shell-top"></div><div id="site-shell-header"></div><main>
+<link href="assets/css/style.css" rel="stylesheet"/>
+</head>
+<body class="subpage">
+<header class="site-header">
+<div class="container nav-wrap">
+<div class="brand-group"><a aria-label="Brojogopal Sapui Home" class="brand" href="index.html">B<span>S</span></a><a class="brand-hint" href="https://www.brojogopalsapui.com/dark/" rel="noopener noreferrer" target="_blank">Mobile View (Dark)</a></div>
+<nav class="nav" id="siteNav">
+<a href="index.html">Home</a>
+<a class="active" href="about.html">About</a>
+<a href="research.html">Research</a>
+<a class="trending-link" href="ongoing-work.html">Trending Topics</a>
+<a href="publications.html">Resources</a>
+<a href="contact.html">Contact</a>
+</nav>
+<button aria-controls="siteNav" aria-expanded="false" aria-label="Toggle menu" class="menu-btn" id="menuBtn">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+<main>
 <section class="page-hero">
 <div class="container">
 <span class="eyebrow">About</span>
@@ -129,7 +146,7 @@
 </div>
 </div>
 </section>
-<section class="section alt">
+<section class="section alt"><div class="container split"><div class="content-card"><span class="kicker">Featured documents</span><h2>Portfolio and doctoral thesis</h2><p>To make the profile more useful for collaborators, hiring teams, and technically interested visitors, this page now includes two longer-form documents. The portfolio translates research work into an industry-facing security and compliance narrative, while the thesis provides the full academic and technical foundation.</p><div class="resource-stack compact-resource-stack"><article class="resource-card document-card"><div><span class="tag">Portfolio PDF</span><h3>AI Hardware Security Compliance Portfolio</h3><p>An industry-ready portfolio that reframes hands-on PhD research into the language of threat analysis, controls, evidence, validation, and residual-risk reasoning.</p></div><div class="btn-row"><a class="btn btn-primary" href="assets/docs/AI_Hardware_Security_Compliance_Portfolio_Full.pdf" rel="noopener noreferrer" target="_blank">Open portfolio</a><a class="btn btn-secondary" download="" href="assets/docs/AI_Hardware_Security_Compliance_Portfolio_Full.pdf">Download PDF</a></div></article><article class="resource-card document-card"><div><span class="tag">Thesis PDF</span><h3>Physical Security of Emerging AI Hardware Accelerators</h3><p>The doctoral thesis presents a cross-layer study of physical security in emerging AI hardware, covering analog compute-in-memory, MRAM persistent faults, flexible neuromorphic security, and FPGA-based HDC vulnerabilities and countermeasures.</p></div><div class="btn-row"><a class="btn btn-primary" href="assets/docs/PhD_thesis.pdf" rel="noopener noreferrer" target="_blank">Open thesis</a><a class="btn btn-secondary" download="" href="assets/docs/PhD_thesis.pdf">Download PDF</a></div></article></div></div><div class="content-card"><span class="kicker">Why they are included here</span><h2>Two complementary views of the same work</h2><p>The portfolio is useful when the goal is quick professional translation: what was protected, how it was evaluated, what evidence exists, and how that work maps to industry security roles.</p><p>The thesis is useful when the goal is technical depth: device models, attack methodology, evaluation detail, and cross-layer design reasoning across emerging AI hardware platforms.</p><div class="callout"><strong>Together:</strong> the portfolio gives the concise professional framing, while the thesis provides the complete technical narrative behind the research direction of this portal.</div></div></div></section><section class="section alt">
 <div class="container">
 <div class="cta">
 <div>
@@ -144,6 +161,25 @@
 </div>
 </div>
 </section>
-</main><div id="site-shell-footer"></div>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<h3>Brojogopal Sapui</h3>
+<p>AI Security• Hardware Trust • Edge/Physical AI</p>
+</div>
+<div>
+<h4>Main Pages</h4>
+<a href="research.html">Research</a>
+<a class="trending-link" href="ongoing-work.html">Trending Topics</a>
+<a href="publications.html">Resources</a>
+</div>
+<div>
+<h4>Focus</h4>
+<p>Cross-layer AI security, trustworthy deployment, hardware-aware defense, and physical intelligence.</p>
+</div>
+</div>
+</footer>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
